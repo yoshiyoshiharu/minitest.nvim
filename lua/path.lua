@@ -6,7 +6,7 @@ end
 
 function M.relative_path_from_git_root()
   local absolute_file_path = vim.fn.expand('%:p')
-  local git_root = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
+  local git_root = vim.api.nvim_command('git rev-parse --show-toplevel')[1]
   local relative_file_path = string.sub(absolute_file_path, string.len(git_root) + 2)
 
   return relative_file_path
