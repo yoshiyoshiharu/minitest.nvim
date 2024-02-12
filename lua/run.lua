@@ -1,5 +1,5 @@
-package.loaded['minitest'] = nil
+package.loaded['runner'] = nil
 
-local minitest = require('minitest')
+local runner = require('runner')
 
-minitest.run()
+runner.run()
