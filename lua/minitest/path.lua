@@ -1,5 +1,7 @@
 local M = {}
 
+local _path = require('plenary.path')
+
 function M.absolute_path()
   return vim.api.nvim_buf_get_name(0)
 end
@@ -24,6 +26,18 @@ function M.find_app_file_from_test_file(path)
   file = string.gsub(file, '_test.rb', '.rb')
 
   return file
+end
+
+function M.exists(path)
+  return _path:new(path):exists()
+end
+
+function M.create_file(path)
+  return _path:new(path):touch({ parents = true })
+end
+
+function M.goto_file(path)
+  vim.cmd('find ' .. path)
 end
 
 return M
