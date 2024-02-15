@@ -10,7 +10,6 @@ function M.teleport_to_test_file()
 
   local test_file = string.gsub(path.absolute_path(), 'app/', 'test/')
   test_file = string.gsub(test_file, '.rb', '_test.rb')
-  print(test_file)
 
   if not path.exists(test_file) then
     vim.notify('Test file does not exist: ' .. test_file)
@@ -36,7 +35,5 @@ function M.teleport_to_app_file()
 
   vim.cmd('find ' .. app_file)
 end
-
-M.teleport_to_test_file()
 
 return M
