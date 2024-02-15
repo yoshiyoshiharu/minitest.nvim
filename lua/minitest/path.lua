@@ -40,4 +40,12 @@ function M.goto_file(path)
   vim.cmd('find ' .. path)
 end
 
+function M.is_app_file(path)
+  return string.match(path, '^app/.+%.rb$') ~= nil
+end
+
+function M.is_test_file(path)
+  return string.match(path, '^test/.+_test%.rb$') ~= nil
+end
+
 return M
