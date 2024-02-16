@@ -12,7 +12,7 @@ function M.teleport()
       return
     end
 
-    vim.cmd('find ' .. app_file)
+    path.goto_file(app_file)
   end
 
   local function teleport_to_test_file()
@@ -24,7 +24,7 @@ function M.teleport()
       return
     end
 
-    vim.cmd('find ' .. test_file)
+    path.goto_file(test_file)
   end
 
   if path.is_test_file(path.relative_path()) then
