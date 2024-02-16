@@ -4,7 +4,7 @@ local path = require('minitest.path')
 
 function M.teleport_to_test_file()
   if not path.is_app_file(path.relative_path()) then
-    vim.notify('Not an app file: ' .. path.relative_path())
+    vim.notify('Current buffer is not an app file: ' .. path.relative_path())
     return
   end
 
@@ -21,7 +21,7 @@ end
 
 function M.teleport_to_app_file()
   if not path.is_test_file(path.relative_path()) then
-    vim.notify('Not a test file: ' .. path.relative_path())
+    vim.notify('Current buffer is not a test file: ' .. path.relative_path())
     return
   end
 
