@@ -19,6 +19,8 @@ function M.run()
   })
 
   vim.fn.termopen(command)
+  vim.cmd "wincmd p"
+  vim.cmd "stopinsert!"
 end
 
 return M
