@@ -8,7 +8,7 @@ function M.run()
 
   local bufnr = vim.api.nvim_create_buf(false, true)
 
-  vim.api.nvim_open_win(bufnr, false, {
+  vim.api.nvim_open_win(bufnr, true, {
     relative='win',
     row = vim.fn.winheight(0),
     col = vim.fn.winwidth(0),
@@ -18,14 +18,7 @@ function M.run()
     style='minimal'
   })
 
-  vim.fn.jobstart(command, {
-    on_stdout = function(_, data)
-      vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, data)
-    end,
-    on_stderr = function(_, data)
-      vim.api.nvim_buf_set_lines(bufnr, -1, -1, false, data)
-    end,
-  })
+  vim.fn.termopen(command)
 end
 
 return M
