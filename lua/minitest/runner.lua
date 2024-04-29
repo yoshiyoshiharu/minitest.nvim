@@ -5,7 +5,7 @@ local M = {}
 
 function M.run()
   if not pathlib.is_test_file(pathlib.relative_path()) then
-    vim.notify "Current buffer is not a test file."
+    vim.notify("Current buffer is not a test file.")
     return
   end
 
@@ -14,18 +14,18 @@ function M.run()
   local bufnr = vim.api.nvim_create_buf(false, true)
 
   vim.api.nvim_open_win(bufnr, true, {
-    relative='win',
+    relative = "win",
     row = vim.fn.winheight(0),
     col = vim.fn.winwidth(0),
-    width=100,
-    height=15,
-    anchor='NW',
-    style='minimal'
+    width = 100,
+    height = 15,
+    anchor = "NW",
+    style = "minimal",
   })
 
   vim.fn.termopen(command)
-  vim.cmd "wincmd p"
-  vim.cmd "stopinsert!"
+  vim.cmd("wincmd p")
+  vim.cmd("stopinsert!")
 end
 
 return M
