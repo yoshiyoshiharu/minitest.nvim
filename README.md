@@ -15,7 +15,8 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```
 
 ## Commands
-- `MinitestRun`
+- `MinitestRunAll`
+- `MinitestRunNearest`
 - `MinitestTeleport`
 
 ## Setup
