@@ -21,6 +21,7 @@ function M.run()
     height = 15,
     anchor = "NW",
     style = "minimal",
+    border = "single",
   })
 
   vim.fn.termopen(command)
