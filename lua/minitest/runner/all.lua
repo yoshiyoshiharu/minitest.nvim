@@ -2,9 +2,9 @@ local pathlib = require("minitest.path")
 local config = require("minitest.config")
 local displayer = require("minitest.runner.displayer")
 
-local M = {}
+local RunnerAll = {}
 
-function M.run()
+function RunnerAll.run()
   if not pathlib.is_test_file(pathlib.relative_path()) then
     vim.notify("Current buffer is not a test file.")
     return
@@ -15,4 +15,4 @@ function M.run()
   displayer.display(command)
 end
 
-return M
+return RunnerAll

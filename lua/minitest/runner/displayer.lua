@@ -1,6 +1,6 @@
-local M = {}
+local RunnerDisplayer = {}
 
-function M.display(command)
+function RunnerDisplayer.display(command)
   local bufnr = vim.api.nvim_create_buf(false, true)
 
   vim.api.nvim_open_win(bufnr, true, {
@@ -19,4 +19,4 @@ function M.display(command)
   vim.cmd("stopinsert!")
 end
 
-return M
+return RunnerDisplayer

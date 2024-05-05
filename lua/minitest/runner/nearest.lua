@@ -3,7 +3,7 @@ local config = require("minitest.config")
 local displayer = require("minitest.runner.displayer")
 local TEST_NOT_FOUND_NUMBER = -1
 
-local M = {}
+local RunnerNearest = {}
 
 local function is_test_case(line_number)
   local line_string = vim.api.nvim_buf_get_lines(0, line_number - 1, line_number, false)[1]
@@ -37,7 +37,7 @@ local function find_nearest_test_line_number()
   return TEST_NOT_FOUND_NUMBER
 end
 
-function M.run()
+function RunnerNearest.run()
   if not pathlib.is_test_file(pathlib.relative_path()) then
     vim.notify("Current buffer is not a test file.")
     return
@@ -55,4 +55,4 @@ function M.run()
   displayer.display(command)
 end
 
-return M
+return RunnerNearest

@@ -1,4 +1,4 @@
-local M = {}
+local Teleporter = {}
 
 local pathlib = require("minitest.path")
 
@@ -33,7 +33,7 @@ local function teleport_to_test_file()
   end
 end
 
-function M.teleport()
+function Teleporter.teleport()
   if pathlib.is_test_file(pathlib.relative_path()) then
     teleport_to_app_file()
   elseif pathlib.is_app_file(pathlib.relative_path()) then
@@ -43,4 +43,4 @@ function M.teleport()
   end
 end
 
-return M
+return Teleporter

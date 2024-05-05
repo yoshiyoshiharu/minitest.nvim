@@ -1,9 +1,9 @@
 local pathlib = require("minitest.path")
 local config = require("minitest.config")
 
-local M = {}
+local Runner = {}
 
-function M.run()
+function Runner.run()
   if not pathlib.is_test_file(pathlib.relative_path()) then
     vim.notify("Current buffer is not a test file.")
     return
@@ -29,4 +29,4 @@ function M.run()
   vim.cmd("stopinsert!")
 end
 
-return M
+return Runner
